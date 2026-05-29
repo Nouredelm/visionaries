@@ -16,7 +16,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,650&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <!-- GitHub Pages is case-sensitive: this file must be named exactly styles.css in the repository root. -->
+  <link rel="stylesheet" href="./styles.css">
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
@@ -94,7 +95,7 @@
         </p>
       </div>
 
-      <div id="score-methodology-title" class="archive-toolbar" aria-label="Profile filters">
+      <div id="profile-filters" class="archive-toolbar" aria-label="Profile filters">
         <label class="search-field">
           <span class="sr-only">Search visionaries</span>
           <input id="profile-search" type="search" placeholder="Search by name, company, domain, country, or tags">
@@ -111,7 +112,7 @@
       <aside class="score-methodology" aria-labelledby="score-methodology-title">
         <div>
           <p class="eyebrow">Scoring methodology</p>
-          <h3 >Evidence-informed, not official rankings.</h3>
+          <h3 id="score-methodology-title">Evidence-informed, not official rankings.</h3>
         </div>
         <p>
           The profile scores are editorial indicators based on documented achievements: shipped products, technical authorship, company scale, adoption, market creation, cultural influence, and long-term institutional impact. No public database provides verified scores for vision, design, execution, or impact, so every number should be read as a transparent research aid rather than a factual measurement.
@@ -147,7 +148,6 @@
       </template>
 
       <p class="empty-state" id="empty-state" hidden>No matching visionaries found.</p>
-      </div>
     </section>
 
     <section class="section-pad article-band" id="research" aria-labelledby="research-title">
@@ -190,6 +190,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=footer-index-3"></script>
+  <!-- GitHub Pages is case-sensitive: this file must be named exactly script.js in the repository root. -->
+  <script src="./script.js?v=footer-index-4" defer></script>
 </body>
 </html>
