@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Football Icons | 3D Player Showcase</title>
+  <meta
+    name="description"
+    content="An immersive football player showcase featuring 3D models, richer storytelling, sharper player profiles, and interactive filtering."
+  >
+  <meta name="theme-color" content="#09131a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@500;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="player-showcase.css">
+</head>
+<body>
+  <header class="site-hero">
+    <div class="site-hero__inner">
+      <div class="site-hero__copy" data-reveal>
+        <p class="eyebrow">3D football gallery</p>
+        <h1>World Football Icons, rebuilt with more energy and better storytelling.</h1>
+        <p class="hero-lead">
+          This enhanced version turns a simple player list into a richer showcase with stronger visual hierarchy,
+          sharper copy, live filtering, and model-ready presentation cards.
+        </p>
+        <div class="hero-metrics" aria-label="Showcase highlights">
+          <article>
+            <strong>10</strong>
+            <span>featured players</span>
+          </article>
+          <article>
+            <strong>7</strong>
+            <span>clubs represented</span>
+          </article>
+          <article>
+            <strong>7</strong>
+            <span>national teams</span>
+          </article>
+          <article>
+            <strong>3D</strong>
+            <span>model-ready cards</span>
+          </article>
+        </div>
+      </div>
+
+      <aside class="hero-panel" data-reveal>
+        <p class="hero-panel__label">What changed</p>
+        <ul class="hero-panel__list">
+          <li>Cleaner structure with consistent player sections</li>
+          <li>More vivid and less repetitive profiles</li>
+          <li>Search and filter controls for faster browsing</li>
+          <li>Responsive layout tailored for desktop and mobile</li>
+        </ul>
+        <p class="hero-panel__note">
+          Your original `models/*.glb` paths are preserved, so you can drop the 3D assets into the same folder structure.
+        </p>
+      </aside>
+    </div>
+  </header>
+
+  <main class="showcase-shell">
+    <section class="controls-panel" aria-labelledby="browse-title" data-reveal>
+      <div class="controls-panel__copy">
+        <p class="eyebrow eyebrow--lime">Browse the gallery</p>
+        <h2 id="browse-title">Search by player, club, country, or play style.</h2>
+        <p class="controls-panel__status" data-player-status>Showing 10 of 10 players</p>
+      </div>
+
+      <div class="controls-panel__actions">
+        <label class="search-field" for="player-search">
+          <span class="search-field__label">Search</span>
+          <input
+            id="player-search"
+            type="search"
+            name="player-search"
+            placeholder="Try Messi, Morocco, winger, or Real Madrid"
+            autocomplete="off"
+            data-player-search
+          >
+        </label>
+
+        <div class="filter-row" role="toolbar" aria-label="Player filters">
+          <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-button" type="button" data-filter="legend" aria-pressed="false">Legends</button>
+          <button class="filter-button" type="button" data-filter="attack" aria-pressed="false">Attackers</button>
+          <button class="filter-button" type="button" data-filter="defense" aria-pressed="false">Defenders</button>
+          <button class="filter-button" type="button" data-filter="morocco" aria-pressed="false">Morocco</button>
+          <button class="filter-button" type="button" data-filter="next-gen" aria-pressed="false">Next Gen</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="player-grid" aria-live="polite">
+      <article
+        class="player-card"
+        data-player-card
+        data-tags="legend attack creator argentina inter miami messi forward playmaker dribbler"
+        data-reveal
+      >
+        <header class="player-card__header">
+          <div>
+            <p class="player-card__eyebrow">Legend</p>
+            <h2>Lionel Messi</h2>
+            <p class="subtitle">Forward | Inter Miami &amp; Argentina</p>
+          </div>
+          <div class="badge-row" aria-label="Player labels">
+            <span>Vision</span>
+            <span>Dribbling</span>
+            <span>Control</span>
+          </div>
+        </header>
+
+        <div class="player-card__body">
+          <div class="model-shell">
+            <div class="model-shell__meta">
+              <span>Free creator</span>
+              <span>Left-footed</span>
+            </div>
+            <model-viewer
+              src="models/messi.glb"
+              alt="3D model of Lionel Messi"
+              auto-rotate
+              camera-controls
+              shadow-intensity="1"
+              exposure="1.05"
+              interaction-prompt="auto"
+              loading="lazy"
+            ></model-viewer>
+            <p class="model-shell__hint">Drag to rotate the model</p>
+          </div>
+
+          <div class="player-card__content scrollable-info">
+            <div class="player-card__facts" aria-label="Quick facts">
+              <article><span>Era</span><strong>Modern great</strong></article>
+              <article><span>Signature</span><strong>Disguised left foot</strong></article>
+              <article><span>Known for</span><strong>Close-control creation</strong></article>
+              <article><span>Fan note</span><strong>La Pulga</strong></article>
+            </div>
+
+            <div class="content-grid">
+              <section>
+                <h3>Profile</h3>
+                <p>
+                  From Rosario to Barcelona's golden era and now Inter Miami, Messi turned balance, imagination,
+                  and timing into a football language of his own. Even deep into his career, he can still slow a match,
+                  read the pressure, and decide it with one touch.
+                </p>
+              </section>
+              <section>
+                <h3>Why He Stands Out</h3>
+                <p>
+                  Few players have blended goals, playmaking, and rhythm control at his level. He sees passing lanes
+                  early, escapes contact in tiny spaces, and makes the difficult option look quiet and inevitable.
+                </p>
+              </section>
+              <section>
+                <h3>Major Honours</h3>
+                <ul class="achievement-list">
+                  <li><strong>8 Ballon d'Or</strong> awards, the all-time record.</li>
+                  <li><strong>2022 FIFA World Cup</strong> winner and Golden Ball recipient.</li>
+                  <li><strong>4 UEFA Champions League</strong> titles with Barcelona.</li>
+                </ul>
+              </section>
+              <section>
+                <h3>Fan Lens</h3>
+                <p>
+                  Supporters still watch him with the same anticipation: not for noise, but for the single opening
+                  only he seems to spot before everyone else.
+                </p>
+              </section>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article
+        class="player-card"
+        data-player-card
+        data-tags="legend attack portugal al nassr ronaldo forward scorer aerial finisher"
+        data-reveal
+      >
+        <header class="player-card__header">
+          <div>
+            <p class="player-card__eyebrow">Legend</p>
+            <h2>Cristiano Ronaldo</h2>
+            <p class="subtitle">Forward | Al Nassr &amp; Portugal</p>
+          </div>
+          <div class="badge-row" aria-label="Player labels">
+            <span>Power</span>
+            <span>Finishing</span>
+            <span>Longevity</span>
+          </div>
+        </header>
+
+        <div class="player-card__body">
+          <div class="model-shell">
+            <div class="model-shell__meta">
+              <span>Box predator</span>
+              <span>Two-foot threat</span>
+            </div>
+            <model-viewer
+              src="models/ronaldo.glb"
+              alt="3D model of Cristiano Ronaldo"
+              auto-rotate
+              camera-controls
+              shadow-intensity="1"
+              exposure="1.05"
+              interaction-prompt="auto"
+              loading="lazy"
+            ></model-viewer>
+            <p class="model-shell__hint">Drag to rotate the model</p>
+          </div>
+
+          <div class="player-card__content scrollable-info">
+            <div class="player-card__facts" aria-label="Quick facts">
+              <article><span>Era</span><strong>Serial winner</strong></article>
+              <article><span>Signature</span><strong>Explosive leap</strong></article>
+              <article><span>Known for</span><strong>Clutch finishing</strong></article>
+              <article><span>Fan note</span><strong>Siuuu!</strong></article>
+            </div>
+
+            <div class="content-grid">
+              <section>
+                <h3>Profile</h3>
+                <p>
+                  Ronaldo's career is a masterclass in reinvention. He evolved from electric winger to relentless
+                  penalty-box finisher, all while maintaining an obsession with fitness, repetition, and decisive moments.
+                </p>
+              </section>
+              <section>
+                <h3>Why He Stands Out</h3>
+                <p>
+                  His finishing is obvious, but the real difference is how often he reshaped himself to stay elite.
+                  Few players have matched his blend of self-belief, timing in the area, and aerial dominance.
+                </p>
+              </section>
+              <section>
+                <h3>Major Honours</h3>
+                <ul class="achievement-list">
+                  <li><strong>5 Ballon d'Or</strong> awards.</li>
+                  <li><strong>5 UEFA Champions League</strong> titles.</li>
+                  <li>Men's all-time leading scorer in international football.</li>
+                </ul>
+              </section>
+              <section>
+                <h3>Fan Lens</h3>
+                <p>
+                  CR7 became more than a player brand. Stadiums still erupt into shared theatre whenever the celebration lands.
+                </p>
+              </section>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article
+        class="player-card"
+        data-player-card
+        data-tags="attack next-gen france real madrid mbappe forward pace finisher superstar"
+        data-reveal
+      >
+        <header class="player-card__header">
+          <div>
+            <p class="player-card__eyebrow">Prime Superstar</p>
+            <h2>Kylian Mbappé</h2>
+            <p class="subtitle">Forward | Real Madrid &amp; France</p>
+          </div>
+          <div class="badge-row" aria-label="Player labels">
+            <span>Pace</span>
+            <span>Transition</span>
+            <span>End Product</span>
+          </div>
+        </header>
+
+        <div class="player-card__body">
+          <div class="model-shell">
+            <div class="model-shell__meta">
+              <span>Transition destroyer</span>
+              <span>Right-footed</span>
+            </div>
+            <model-viewer
+              src="models/mbappe.glb"
+              alt="3D model of Kylian Mbappe"
+              auto-rotate
+              camera-controls
+              shadow-intensity="1"
+              exposure="1.05"
+              interaction-prompt="auto"
+              loading="lazy"
+            ></model-viewer>
+            <p class="model-shell__hint">Drag to rotate the model</p>
+          </div>
+
+          <div class="player-card__content scrollable-info">
+            <div class="player-card__facts" aria-label="Quick facts">
+              <article><span>Era</span><strong>Prime superstar</strong></article>
+              <article><span>Signature</span><strong>First-step burst</strong></article>
+              <article><span>Known for</span><strong>Run in behind</strong></article>
+              <article><span>Fan note</span><strong>Game-breaker</strong></article>
+            </div>
+
+            <div class="content-grid">
+              <section>
+                <h3>Profile</h3>
+                <p>
+                  Mbappé announced himself at Monaco, dominated in Paris, and carried that same explosiveness into Real Madrid.
+                  He represents the shift from the Messi-Ronaldo duopoly into a new era of speed-led superstar football.
+                </p>
+              </section>
+              <section>
+                <h3>Why He Stands Out</h3>
+                <p>
+                  He bends defensive lines before the ball even arrives. Full-backs fear the outside lane,
+                  centre-backs fear the inside run, and his finishing punishes hesitation instantly.
+                </p>
+              </section>
+              <section>
+                <h3>Major Honours</h3>
+                <ul class="achievement-list">
+                  <li><strong>2018 FIFA World Cup</strong> winner.</li>
+                  <li><strong>2022 World Cup Golden Boot</strong> after scoring a final hat-trick.</li>
+                  <li>Multiple domestic titles and top-player awards in France.</li>
+                </ul>
+              </section>
+              <section>
+                <h3>Fan Lens</h3>
+                <p>
+                  Fans see him as the player most capable of turning one transition into a full stadium momentum swing.
+                </p>
+              </section>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article
+        class="player-card"
+        data-player-card
+        data-tags="defense morocco paris saint-germain psg hakimi right-back pace overlap"
+        data-reveal
+      >
+        <header class="player-card__header">
+          <div>
+            <p class="player-card__eyebrow">Two-Way Engine</p>
+            <h2>Achraf Hakimi</h2>
+            <p class="subtitle">Right-Back | Paris Saint-Germain &amp; Morocco</p>
+          </div>
+          <div class="badge-row" aria-label="Player labels">
+            <span>Recovery Pace</span>
+            <span>Overlap</span>
+            <span>Delivery</span>
+          </div>
+        </header>
+
+        <div class="player-card__body">
+          <div class="model-shell">
+            <div class="model-shell__meta">
+              <span>Modern full-back</span>
+              <span>Right-sided runner</span>
+            </div>
+            <model-viewer
+              src="models/hakimi.glb"
+              alt="3D model of Achraf Hakimi"
+              auto-rotate
+              camera-controls
+              shadow-intensity="1"
+              exposure="1.05"
+              interaction-prompt="auto"
+              loading="lazy"
+            ></model-viewer>
+            <p class="model-shell__hint">Drag to rotate the model</p>
+          </div>
+
+          <div class="player-card__content scrollable-info">
+            <div class="player-card__facts" aria-label="Quick facts">
+              <article><span>Era</span><strong>Modern wide defender</strong></article>
+              <article><span>Signature</span><strong>Recovery burst</strong></article>
+              <article><span>Known for</span><strong>Relentless overlap</strong></article>
+              <article><span>Fan note</span><strong>Panenka ice</strong></article>
+            </div>
+
+            <div class="content-grid">
+              <section>
+                <h3>Profile</h3>
+                <p>
+                  Developed in Madrid, sharpened in Dortmund and Inter, and matured in Paris, Hakimi became a blueprint
+                  for the modern attacking full-back: fast, fearless, and productive in the final third.
+                </p>
+              </section>
+              <section>
+                <h3>Why He Stands Out</h3>
+                <p>
+                  He treats the flank like open runway. Few defenders can recover ground, combine at speed,
+                  and still arrive with composure in shooting or crossing positions.
+                </p>
+              </section>
+              <section>
+                <h3>Major Honours</h3>
+                <ul class="achievement-list">
+                  <li>Part of Morocco's historic <strong>2022 World Cup semi-final</strong> run.</li>
+                  <li><strong>League champion</strong> in Italy with Inter and in France with Paris Saint-Germain.</li>
+                  <li>One of the defining Moroccan defenders of his generation.</li>
+                </ul>
+              </section>
+              <section>
+                <h3>Fan Lens</h3>
+                <p>
+                  For Morocco supporters, Hakimi represents fearless ambition. The calm penalty against Spain already lives as folklore.
+                </p>
+              </section>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article
+        class="player-card"
+        data-player-card
+        data-tags="attack next-gen spain barcelona yamal winger creator left-footed teenager"
+        data-reveal
+      >
+        <header class="player-card__header">
+          <div>
+            <p class="player-card__eyebrow">Next Gen</p>
+            <h2>Lamine Yamal</h2>
+            <p class="subtitle">Winger | FC Barcelona &amp; Spain</p>
+          </div>
+          <div class="badge-row" aria-label="Player labels">
+            <span>Composure</span>
+            <span>Flair</span>
+            <span>Decision-Making</span>
+          </div>
+        </header>
+
+        <div class="player-card__body">
+          <div class="model-shell">
+            <div class="model-shell__meta">
+              <span>Wide creator</span>
+              <span>Left-footed</span>
+            </div>
+            <model-viewer
+              src="models/yamal.glb"
+              alt="3D model of Lamine Yamal"
+              auto-rotate
+              camera-controls
+              shadow-intensity="1"
+              exposure="1.05"
+              interaction-prompt="auto"
+              loading="lazy"
+            ></model-viewer>
+            <p class="model-shell__hint">Drag to rotate the model</p>
+          </div>
+
+          <div class="player-card__content scrollable-info">
+            <div class="player-card__facts" aria-label="Quick facts">
+              <article><span>Era</span><strong>Teenage phenomenon</strong></article>
+              <article><span>Signature</span><strong>Tempo beyond years</strong></article>
+              <article><span>Known for</span><strong>Wide playmaking</strong></article>
+              <article><span>Fan note</span><strong>304 salute</strong></article>
+            </div>
+
+            <div class="content-grid">
+              <section>
+                <h3>Profile</h3>
+                <p>
+                  Yamal arrived from La Masia with the technical purity people expect from Barcelona, but his real shock value
+                  is maturity. He already plays with the poise of someone who has seen every pressure pattern before.
+                </p>
+              </section>
+              <section>
+                <h3>Why He Stands Out</h3>
+                <p>
+                  He tempts defenders into overcommitting, then chooses the smartest answer: clipped cross, reverse pass,
+                  disguised dribble, or curling finish. The pace of his decisions feels years ahead of his age.
+                </p>
+              </section>
+              <section>
+                <h3>Major Honours</h3>
+                <ul class="achievement-list">
+                  <li><strong>UEFA Euro 2024</strong> winner with Spain.</li>
+                  <li><strong>Young Player of the Tournament</strong> at Euro 2024.</li>
+                  <li>Record-setting scorer across several youth and senior milestones for club and country.</li>
+                </ul>
+              </section>
+              <section>
+                <h3>Fan Lens</h3>
+                <p>
+                  His "304" celebration grounds the hype in identity, turning a prodigy narrative into something personal and local.
+                </p>
+              </section>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article
+        class="player-card"
+        data-player-card
+        data-tags="attack egypt liverpool salah winger scorer premier league icon"
+        data-reveal
+      >
+        <header class="player-card__header">
+          <div>
+            <p class="player-card__eyebrow">Premier League Icon</p>
+            <h2>Mohamed Salah</h2>
+            <p class="subtitle">Winger | Liverpool &amp; Egypt</p>
+          </div>
+          <div class="badge-row" aria-label="Player labels">
+            <span>Inside Runs</span>
+            <span>Finishing</span>
+            <span>Consistency</span>
+          </div>
+        </header>
+
+        <div class="player-card__body">
+          <div class="model-shell">
+            <div class="model-shell__meta">
+              <span>Inverted scorer</span>
+              <span>Right-sided threat</span>
+            </div>
+            <model-viewer
+              src="models/salah.glb"
+              alt="3D model of Mohamed Salah"
+              auto-rotate
+              camera-controls
+              shadow-intensity="1"
+              exposure="1.05"
+              interaction-prompt="auto"
+              loading="lazy"
+            ></model-viewer>
+            <p class="model-shell__hint">Drag to rotate the model</p>
+          </div>
+
+          <div class="player-card__content scrollable-info">
+            <div class="player-card__facts" aria-label="Quick facts">
+              <article><span>Era</span><strong>Premier League icon</strong></article>
+              <article><span>Signature</span><strong>Whip to far corner</strong></article>
+              <article><span>Known for</span><strong>Half-space attacks</strong></article>
+              <article><span>Fan note</span><strong>Egyptian King</strong></article>
+            </div>
+
+            <div class="content-grid">
+              <section>
+                <h3>Profile</h3>
+                <p>
+                  Salah's rise is built on reinvention. After difficult early years in England, he returned from Italy
+                  sharper and became Liverpool's reference point on the right side of attack.
+                </p>
+              </section>
+              <section>
+                <h3>Why He Stands Out</h3>
+                <p>
+                  He stretches teams vertically like a striker while starting from the wing. His repeat sprints, clean body shape,
+                  and calm finishing have made him one of the era's most dependable attacking outlets.
+                </p>
+              </section>
+              <section>
+                <h3>Major Honours</h3>
+                <ul class="achievement-list">
+                  <li><strong>3 Premier League Golden Boot</strong> awards.</li>
+                  <li><strong>UEFA Champions League</strong> and <strong>Premier League</strong> winner with Liverpool.</li>
+                  <li>One of the most productive African attackers in European football history.</li>
+                </ul>
+              </section>
+              <section>
+                <h3>Fan Lens</h3>
+                <p>
+                  Salah's status reaches far beyond club football. For many supporters, he blends elite output with a powerful sense of representation.
+                </p>
+              </section>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article
+        class="player-card"
+        data-player-card
+        data-tags="defense belgium real madrid courtois goalkeeper shot-stopper reach"
+        data-reveal
+      >
+        <header class="player-card__header">
+          <div>
+            <p class="player-card__eyebrow">Wall in Goal</p>
+            <h2>Thibaut Courtois</h2>
+            <p class="subtitle">Goalkeeper | Real Madrid &amp; Belgium</p>
+          </div>
+          <div class="badge-row" aria-label="Player labels">
+            <span>Reflexes</span>
+            <span>Reach</span>
+            <span>Big Games</span>
+          </div>
+        </header>
+
+        <div class="player-card__body">
+          <div class="model-shell">
+            <div class="model-shell__meta">
+              <span>Shot-stopping anchor</span>
+              <span>6'7" presence</span>
+            </div>
+            <model-viewer
+              src="models/courtois.glb"
+              alt="3D model of Thibaut Courtois"
+              auto-rotate
+              camera-controls
+              shadow-intensity="1"
+              exposure="1.05"
+              interaction-prompt="auto"
+              loading="lazy"
+            ></model-viewer>
+            <p class="model-shell__hint">Drag to rotate the model</p>
+          </div>
+
+          <div class="player-card__content scrollable-info">
+            <div class="player-card__facts" aria-label="Quick facts">
+              <article><span>Era</span><strong>Clutch goalkeeper</strong></article>
+              <article><span>Signature</span><strong>Long-frame reach</strong></article>
+              <article><span>Known for</span><strong>Angle control</strong></article>
+              <article><span>Fan note</span><strong>Final specialist</strong></article>
+            </div>
+
+            <div class="content-grid">
+              <section>
+                <h3>Profile</h3>
+                <p>
+                  Courtois makes the goal look smaller. His calm positioning, secure handling, and giant frame let him erase
+                  shots that feel certain when they leave the striker's boot.
+                </p>
+              </section>
+              <section>
+                <h3>Why He Stands Out</h3>
+                <p>
+                  The intimidation is subtle rather than theatrical. He wins with angles, patience, and the reach to recover even when attackers think they have the corner.
+                </p>
+              </section>
+              <section>
+                <h3>Major Honours</h3>
+                <ul class="achievement-list">
+                  <li><strong>2022 Yashin Trophy</strong> winner.</li>
+                  <li><strong>2018 World Cup Golden Glove</strong> recipient.</li>
+                  <li>Defining figure in Real Madrid's <strong>2022 Champions League</strong> triumph.</li>
+                </ul>
+              </section>
+              <section>
+                <h3>Fan Lens</h3>
+                <p>
+                  When supporters say "big-game goalkeeper," his Paris final masterclass is usually the performance they mean.
+                </p>
+              </section>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article
+        class="player-card"
+        data-player-card
+        data-tags="morocco creator real madrid brahim diaz attacking midfielder dribbler pressure"
+        data-reveal
+      >
+        <header class="player-card__header">
+          <div>
+            <p class="player-card__eyebrow">Impact Playmaker</p>
+            <h2>Brahim Diaz</h2>
+            <p class="subtitle">Attacking Midfielder | Real Madrid &amp; Morocco</p>
+          </div>
+          <div class="badge-row" aria-label="Player labels">
+            <span>Agility</span>
+            <span>Close Control</span>
+            <span>Press Resistance</span>
+          </div>
+        </header>
+
+        <div class="player-card__body">
+          <div class="model-shell">
+            <div class="model-shell__meta">
+              <span>Press-resistant creator</span>
+              <span>Two-foot balance</span>
+            </div>
+            <model-viewer
+              src="models/diaz.glb"
+              alt="3D model of Brahim Diaz"
+              auto-rotate
+              camera-controls
+              shadow-intensity="1"
+              exposure="1.05"
+              interaction-prompt="auto"
+              loading="lazy"
+            ></model-viewer>
+            <p class="model-shell__hint">Drag to rotate the model</p>
+          </div>
+
+          <div class="player-card__content scrollable-info">
+            <div class="player-card__facts" aria-label="Quick facts">
+              <article><span>Era</span><strong>Impact creator</strong></article>
+              <article><span>Signature</span><strong>Two-foot control</strong></article>
+              <article><span>Known for</span><strong>Turning in traffic</strong></article>
+              <article><span>Fan note</span><strong>Tight-space joy</strong></article>
+            </div>
+
+            <div class="content-grid">
+              <section>
+                <h3>Profile</h3>
+                <p>
+                  Brahim thrives where matches get crowded. Quick feet, body feints, and low-centre balance make him a difficult player
+                  to trap when the game compresses around the box.
+                </p>
+              </section>
+              <section>
+                <h3>Why He Stands Out</h3>
+                <p>
+                  He is perfect for messy phases: receive between lines, turn sharply, and tilt the tempo before defenders can set themselves.
+                  That mix of flair and efficiency makes him a valuable change-of-rhythm option.
+                </p>
+              </section>
+              <section>
+                <h3>Major Honours</h3>
+                <ul class="achievement-list">
+                  <li><strong>UEFA Champions League</strong> winner with Real Madrid.</li>
+                  <li><strong>Serie A</strong> champion with AC Milan.</li>
+                  <li>Title-winning experience in Spain, Italy, and England.</li>
+                </ul>
+              </section>
+              <section>
+                <h3>Fan Lens</h3>
+                <p>
+                  Morocco supporters embraced him quickly because his game feels joyful: direct, technical, and brave in the smallest spaces.
+                </p>
+              </section>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article
+        class="player-card"
+        data-player-card
+        data-tags="morocco attack winger ziyech wydad left-foot creator crossing set-pieces"
+        data-reveal
+      >
+        <header class="player-card__header">
+          <div>
+            <p class="player-card__eyebrow">Left-Foot Artist</p>
+            <h2>Hakim Ziyech</h2>
+            <p class="subtitle">Winger | Wydad AC &amp; Morocco</p>
+          </div>
+          <div class="badge-row" aria-label="Player labels">
+            <span>Crossing</span>
+            <span>Set Pieces</span>
+            <span>Risk Taking</span>
+          </div>
+        </header>
+
+        <div class="player-card__body">
+          <div class="model-shell">
+            <div class="model-shell__meta">
+              <span>Left-foot conductor</span>
+              <span>Creative winger</span>
+            </div>
+            <model-viewer
+              src="models/ziyech.glb"
+              alt="3D model of Hakim Ziyech"
+              auto-rotate
+              camera-controls
+              shadow-intensity="1"
+              exposure="1.05"
+              interaction-prompt="auto"
+              loading="lazy"
+            ></model-viewer>
+            <p class="model-shell__hint">Drag to rotate the model</p>
+          </div>
+
+          <div class="player-card__content scrollable-info">
+            <div class="player-card__facts" aria-label="Quick facts">
+              <article><span>Era</span><strong>Creative talisman</strong></article>
+              <article><span>Signature</span><strong>Curling delivery</strong></article>
+              <article><span>Known for</span><strong>Diagonal release</strong></article>
+              <article><span>Fan note</span><strong>The Wizard</strong></article>
+            </div>
+
+            <div class="content-grid">
+              <section>
+                <h3>Profile</h3>
+                <p>
+                  Ziyech built his reputation on craft rather than force. Give him time on that left foot and he can tilt the entire shape
+                  of a match with one pass, one inswinging cross, or one dead-ball moment.
+                </p>
+              </section>
+              <section>
+                <h3>Why He Stands Out</h3>
+                <p>
+                  He plays with risk. Not every attempted line-break lands, but the successful ones open defenses instantly and change the tempo of possession.
+                </p>
+              </section>
+              <section>
+                <h3>Major Honours</h3>
+                <ul class="achievement-list">
+                  <li><strong>UEFA Champions League</strong> winner with Chelsea.</li>
+                  <li><strong>Eredivisie standout</strong> during Ajax's elite European run.</li>
+                  <li>Key creator in Morocco's historic <strong>2022 World Cup</strong> journey.</li>
+                </ul>
+              </section>
+              <section>
+                <h3>Fan Lens</h3>
+                <p>
+                  Fans call him a wizard because his delivery always seems to carry one more bend, pause, or disguise than defenders expect.
+                </p>
+              </section>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article
+        class="player-card"
+        data-player-card
+        data-tags="attack france paris saint-germain psg dembele winger dribbler ambidextrous"
+        data-reveal
+      >
+        <header class="player-card__header">
+          <div>
+            <p class="player-card__eyebrow">Chaos Creator</p>
+            <h2>Ousmane Dembélé</h2>
+            <p class="subtitle">Winger | Paris Saint-Germain &amp; France</p>
+          </div>
+          <div class="badge-row" aria-label="Player labels">
+            <span>Ambidextrous</span>
+            <span>Unpredictable</span>
+            <span>Acceleration</span>
+          </div>
+        </header>
+
+        <div class="player-card__body">
+          <div class="model-shell">
+            <div class="model-shell__meta">
+              <span>Two-footed dribbler</span>
+              <span>Wide disruptor</span>
+            </div>
+            <model-viewer
+              src="models/dembele.glb"
+              alt="3D model of Ousmane Dembele"
+              auto-rotate
+              camera-controls
+              shadow-intensity="1"
+              exposure="1.05"
+              interaction-prompt="auto"
+              loading="lazy"
+            ></model-viewer>
+            <p class="model-shell__hint">Drag to rotate the model</p>
+          </div>
+
+          <div class="player-card__content scrollable-info">
+            <div class="player-card__facts" aria-label="Quick facts">
+              <article><span>Era</span><strong>Modern chaos winger</strong></article>
+              <article><span>Signature</span><strong>Unreadable release</strong></article>
+              <article><span>Known for</span><strong>Either-foot threat</strong></article>
+              <article><span>Fan note</span><strong>Impossible angle</strong></article>
+            </div>
+
+            <div class="content-grid">
+              <section>
+                <h3>Profile</h3>
+                <p>
+                  Dembélé feels like football rendered with fewer rules. He can accelerate either way, release early off both feet,
+                  and turn a stable defensive shape into emergency mode within seconds.
+                </p>
+              </section>
+              <section>
+                <h3>Why He Stands Out</h3>
+                <p>
+                  Ambidexterity is not decoration in his case. It changes the geometry of every duel because defenders cannot confidently show him one side.
+                </p>
+              </section>
+              <section>
+                <h3>Major Honours</h3>
+                <ul class="achievement-list">
+                  <li><strong>2018 FIFA World Cup</strong> winner with France.</li>
+                  <li>Multiple <strong>league titles</strong> in Spain and France.</li>
+                  <li>Consistent final-third production at the highest level.</li>
+                </ul>
+              </section>
+              <section>
+                <h3>Fan Lens</h3>
+                <p>
+                  When he is sharp, he feels almost unscoutable. Even teammates can look surprised by which option he picks next.
+                </p>
+              </section>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <p class="empty-state" data-empty-state hidden>
+      No players match the current search. Try a different name, club, country, or filter.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      Built for `model-viewer` with preserved asset paths like `models/messi.glb`. If your `.glb` files live in that folder,
+      the gallery is ready to use.
+    </p>
+  </footer>
+
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script src="player-showcase.js" defer></script>
+</body>
+</html>
